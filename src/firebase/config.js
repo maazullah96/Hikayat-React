@@ -1,10 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app'
-// import { getAnalytics } from 'firebase/analytics'
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 import { getFirestore } from 'firebase/firestore'
-
 import {
   getAuth,
   GoogleAuthProvider,
@@ -12,18 +8,19 @@ import {
   TwitterAuthProvider
 } from 'firebase/auth'
 
+console.log(import.meta)
+
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: 'AIzaSyBWlnf9Ir7hlpohYvGTsLyUsc-4MrZYSNw',
-  authDomain: 'hikayat-app-dfbfa.firebaseapp.com',
-  databaseURL:
-    'https://hikayat-app-dfbfa-default-rtdb.asia-southeast1.firebasedatabase.app',
-  projectId: 'hikayat-app-dfbfa',
-  storageBucket: 'hikayat-app-dfbfa.appspot.com',
-  messagingSenderId: '19718006834',
-  appId: '1:19718006834:web:b724f6e84d4a2a69c4742b',
-  measurementId: 'G-CY4ELES8EF'
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_DATABASE_URL,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID
 }
 
 const app = initializeApp(firebaseConfig)
